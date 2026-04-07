@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import bellIcon from "./assets/notification.png";
+import studentIcon from "./assets/group.png"; 
+import { Landmark, UserCheck, Send } from "lucide-react";
 import "./App.css";
 
 function App() {
@@ -85,9 +87,15 @@ function App() {
         <div className="flex items-center gap-30 ">
 
           {/* Logo */}
-          <div>
-            <h1 className="font-bold text-lg md:text-xl">GCE Srirangam</h1>
-            <p className="text-xs md:text-base text-gray-500">Placement Cell</p>
+          <div className="flex items-center gap-3">
+              <div className="bg-gray-200 p-2 rounded-lg">
+                <Landmark className="w-6 h-6 text-blue-600" />
+              </div>
+
+              <div>
+                <h1 className="font-bold text-lg md:text-xl">GCE Srirangam</h1>
+                <p className="text-xs md:text-base text-gray-500">Placement Cell</p>
+              </div>
           </div>
 
           {/* Menu */}
@@ -195,20 +203,33 @@ function App() {
             </div>
 
             <div className="bg-white rounded-xl p-5 md:p-6 shadow-sm">
-              <h3 className="font-montserrat font-bold mb-4 text-base md:text-lg">👥 Student Engagement</h3>
-
-              <div className="flex justify-between mb-4">
-                <span className="text-gray-500 text-sm">Total Registered</span>
-                <span className="font-bold">
-                  {stats.registeredStudents}
-                </span>
+              <div className="flex items-center gap-2 mb-4">
+                <img src={studentIcon} alt="students" className="w-6 h-6" />
+                <h3 className="font-montserrat font-bold text-base md:text-lg">
+                       Student Engagement
+                </h3>
               </div>
 
-              <div className="flex justify-between">
-                <span className="text-gray-500 text-sm">Applied Today</span>
-                <span className="font-bold">
-                  {stats.appliedToday}
-                </span>
+              <div className="flex justify-between items-center mb-4">
+                 <div className="flex items-center gap-2">
+                    <UserCheck className="w-5 h-5 text-blue-500" />
+                    <span className="text-gray-500 text-sm">Total Registered</span>
+                 </div>
+
+                 <span className="font-bold">
+                    {stats.registeredStudents}
+                 </span>
+              </div>
+
+              <div className="flex justify-between items-center">
+                 <div className="flex items-center gap-2">
+                   <Send className="w-5 h-5 text-green-500" />
+                   <span className="text-gray-500 text-sm">Applied Today</span>
+                 </div>
+
+                 <span className="font-bold">
+                    {stats.appliedToday}
+                 </span>
               </div>
 
               <button className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold transition duration-300 text-sm md:text-base">
