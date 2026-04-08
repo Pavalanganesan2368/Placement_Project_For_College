@@ -178,4 +178,3 @@ export default function ProfilePage() {
     </div>
   );
 }  
-export default  function App install;
